@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   geet_next_line.c                                   :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaafkhar <kaafkhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 03:22:43 by kaafkhar          #+#    #+#             */
-/*   Updated: 2024/01/20 03:49:31 by kaafkhar         ###   ########.fr       */
+/*   Updated: 2024/01/20 04:36:31 by kaafkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "get_next_line.h"
 
@@ -87,12 +86,9 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-    g = ft_read_line(fd, s);
-    if (!g)
-        return (NULL);
-
-    s = check(g);
-    g = del(g);
-        
-  
+	g = ft_read_line(fd, s);
+	if (!g)
+		return (NULL);
+	s = check(g);
+	g = del(g);
 }
