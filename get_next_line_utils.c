@@ -6,11 +6,12 @@
 /*   By: kaafkhar <kaafkhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 03:23:58 by kaafkhar          #+#    #+#             */
-/*   Updated: 2024/01/20 04:35:13 by kaafkhar         ###   ########.fr       */
+/*   Updated: 2024/01/21 19:57:36 by kaafkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
 
 size_t	ft_strlen(const char *str)
 {
