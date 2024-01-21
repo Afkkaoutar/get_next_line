@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   grt_next_line_bonnus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaafkhar <kaafkhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 21:08:55 by kaafkhar          #+#    #+#             */
-/*   Updated: 2024/01/21 23:30:48 by kaafkhar         ###   ########.fr       */
+/*   Created: 2024/01/21 23:28:20 by kaafkhar          #+#    #+#             */
+/*   Updated: 2024/01/21 23:31:08 by kaafkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,15 @@ char	*rest_line(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*g;
+	static char	*g[OPEN_MAX];
 	char		*s;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	g = ft_read_line(fd, g);
+	g[fd] = ft_read_line(fd, g[fd]);
 	if (!g)
 		return (NULL);
-	s = first_line(g);
-	g = rest_line(g);
+	s = first_line(g[fd]);
+	g[fd] = rest_line(g[fd]);
 	return (s);
 }
