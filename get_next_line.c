@@ -6,7 +6,7 @@
 /*   By: kaafkhar <kaafkhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:08:55 by kaafkhar          #+#    #+#             */
-/*   Updated: 2024/01/21 23:30:48 by kaafkhar         ###   ########.fr       */
+/*   Updated: 2024/01/22 23:18:33 by kaafkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*get_next_line(int fd)
 	static char	*g;
 	char		*s;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= 2147483647)
 		return (NULL);
 	g = ft_read_line(fd, g);
 	if (!g)

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   grt_next_line_bonnus.c                             :+:      :+:    :+:   */
+/*   get_next_line_bonnus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaafkhar <kaafkhar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 23:28:20 by kaafkhar          #+#    #+#             */
-/*   Updated: 2024/01/21 23:31:08 by kaafkhar         ###   ########.fr       */
+/*   Updated: 2024/01/23 01:46:35 by kaafkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_read_line(int fd, char *s)
 {
@@ -84,10 +84,10 @@ char	*get_next_line(int fd)
 	static char	*g[OPEN_MAX];
 	char		*s;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= 2147483647)
 		return (NULL);
 	g[fd] = ft_read_line(fd, g[fd]);
-	if (!g)
+	if (!g[fd])
 		return (NULL);
 	s = first_line(g[fd]);
 	g[fd] = rest_line(g[fd]);
